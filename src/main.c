@@ -23,7 +23,7 @@ void	fill_flags_best_scenario(t_ps_list *stack_a)
 	else
 		fill_flags(stack_a, take_best_case_by_index(stack_a));
 }
-
+#include <stdio.h>
 int	main(int argc, char **argv)
 {
 	t_ps_list	*check;
@@ -38,6 +38,8 @@ int	main(int argc, char **argv)
 	split_args(&check, argc, argv);
 	bubble_sort(check, ps_lstsize(check));
 	fill_stack_order(stack_a, check);
+	if(check_is_sorted(stack_a))
+		exit(0);
 	if (ps_lstsize(stack_a) == 2)
 		two_digits(stack_a);
 	else if (ps_lstsize(stack_a) == 3)

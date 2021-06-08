@@ -65,7 +65,7 @@ void		four_digits(t_ps_list **stack_a, t_ps_list **stack_b);
 void		five_digits(t_ps_list **stack_a, t_ps_list **stack_b);
 void		more_five_digits(t_ps_list **stack_a, t_ps_list **stack_b,
 				   t_ps_list *check);
-
+int	check_is_sorted(t_ps_list *head);
 int			check_zero_flag(t_ps_list *head);
 void		fill_flags_best_scenario(t_ps_list *stack_a);
 #endif

@@ -1,5 +1,17 @@
 #include "../includes/push_swap.h"
 
+int	check_is_sorted(t_ps_list *head)
+{
+	while (head)
+	{
+		if (!head->next)
+			break;
+		if (head->next->order != head->order + 1)
+			return (0);
+		head = head->next;
+	}
+	return (1);
+}
 void	two_digits(t_ps_list *stack_a)
 {
 	if (stack_a->value > stack_a->next->value)
@@ -64,7 +76,9 @@ void	five_digits(t_ps_list **stack_a, t_ps_list **stack_b)
 	make_rotations(stack_a, tmp->order);
 	push_b(stack_a, stack_b);
 	four_digits(stack_a, stack_b);
+	three_digits(stack_a);
 	push_a(stack_b, stack_a);
+
 }
 
 void	more_five_digits(t_ps_list **stack_a, t_ps_list **stack_b,
